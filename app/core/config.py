@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     DATABASE_URL: PostgresDsn
     DATABASE_URL_LOCALHOST: PostgresDsn
+    QUERY_TIMEOUT_SECONDS: int = 10
 
     @field_validator("DATABASE_URL", "DATABASE_URL_LOCALHOST", mode="before")
     @staticmethod

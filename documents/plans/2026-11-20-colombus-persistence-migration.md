@@ -42,8 +42,8 @@ colombus app via GraphQL (`strawberry[fastapi]`).
 1. **Docs** — this plan + architecture ADR. (`docs(plans)`, `docs(adr)`)
 2. **Models** ✅ — `app/db/models.py` with all 8 tables; round-trip + metadata tests fed by
    the JSON fixtures. ADR-0002: model ownership & schema fidelity.
-3. **Engine/sessions/config** — test-bound engine, `get_session` dependency,
-   `statement_timeout` setting. ADR: session & DB settings design.
+3. **Engine/sessions/config** ✅ — test-bound engine, `get_session` dependency,
+   `statement_timeout` setting. ADR-0003: session & DB settings design.
 4. **Alembic baseline** — one baseline revision of the colombus schema replacing the
    `User`/`Item` chain; migration-verification test. ADR: baseline strategy.
 5. **GraphQL queries** — auto-mapped read queries + manual `MatchingProfile` type +
