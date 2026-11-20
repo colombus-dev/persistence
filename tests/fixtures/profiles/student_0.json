@@ -1,0 +1,4176 @@
+{
+    "name": "student_0",
+    "metadata": {
+        "version": "0.3.0-MLProfile",
+        "generation_date": "2025-09-25T12:27:16.904860",
+        "taxonomy": "headergen",
+        "profiler": "llm"
+    },
+    "source": [
+        {
+            "name": "Library Loading",
+            "tasks": [
+                {
+                    "id": "8a3666ae-62c1-44c9-b802-1780d35e532f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import ssl",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "20f90c35-d957-443c-8170-c8e6748702e2",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import warnings",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Others",
+            "tasks": [
+                {
+                    "id": "09eb0572-a40b-496f-9668-9314a19bff1b",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "warnings",
+                    "function": "filterwarnings",
+                    "tasks": [
+                        {
+                            "name": "warnings.filterwarnings('ignore')",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.007175922402781,
+                        "logprobs": [
+                            [
+                                [
+                                    "Others",
+                                    99.29
+                                ],
+                                [
+                                    "Library",
+                                    0.57
+                                ],
+                                [
+                                    "Data",
+                                    0.14
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Library Loading",
+            "tasks": [
+                {
+                    "id": "7c6d0c99-fb48-4070-a6cc-c7eca772ea7a",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import os",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "71eb0d20-22b9-4f16-b845-6d7efed85dfc",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import numpy as np",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "41e99c1a-86a2-40bb-8e0c-d17bc64c271f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import matplotlib.pyplot as plt",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "ffcf8cbb-7b72-474f-b179-0c09773a1b93",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import seaborn as sns",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "7cb3a80b-33b6-44ff-a353-c8faeee23215",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import pandas as pd",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "2b4ae371-6a78-41c1-8fab-4f9eb383e56e",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import time",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "754f9527-fb21-45bc-a5dd-75cb20389935",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn import set_config",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "091c6b43-e715-4a7c-8aca-fa784c773e8c",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn",
+                    "function": "set_config",
+                    "tasks": [
+                        {
+                            "name": "set_config(display=\"diagram\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.1956988968190627,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    58.5
+                                ],
+                                [
+                                    "Others",
+                                    31.31
+                                ],
+                                [
+                                    "Library",
+                                    10.17
+                                ],
+                                [
+                                    "Data",
+                                    0.01
+                                ],
+                                [
+                                    "Feature",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Library Loading",
+            "tasks": [
+                {
+                    "id": "618c0772-f849-4f29-8435-1ad5eb53988f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.model_selection import train_test_split",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "472bbcaf-10fb-45b3-9d1d-4f7f71ab867b",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.pipeline import Pipeline",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "0aa2ac55-d0e2-48ac-9d49-06d6fe5c5e53",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "8f95b032-5831-4f9f-9ee0-4b400d196901",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.preprocessing import OneHotEncoder",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "9b6bbd17-2652-40bd-bacf-a731fec1f068",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.linear_model import LogisticRegression",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "7655fcf3-8ded-4b00-b585-863ac3132fe9",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.metrics import classification_report, confusion_matrix, f1_score, accuracy_score",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "63567a4c-0de1-4aa2-b888-0b3d22bb1589",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from sklearn.model_selection import GridSearchCV, RandomizedSearchCV",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "bb7c694b-95fb-4d4a-a87b-25d0f5180497",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import nltk",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "80b78103-ac9d-4fa7-a87f-b715dd493b00",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from nltk import word_tokenize, sent_tokenize",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "ba72cbb7-6214-4ff1-9330-0ede69eff4ec",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from nltk.stem import PorterStemmer",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "4cd2132e-873c-4cc8-a888-182926e382be",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from nltk import FreqDist",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "0914399c-bad1-45cb-8a31-bf146ee82fcc",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import tensorflow as tf",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "c03eaaee-fefc-4393-9242-f4258eefcb60",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "import keras_tuner as kt",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "1267ab78-96db-4d2a-a971-305938f6c328",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from tensorflow.keras.models import Model",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                },
+                {
+                    "id": "b54cb7b0-6382-4745-a05a-fcad93fad7bd",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from tensorflow.keras import layers, callbacks, utils",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Loading",
+            "tasks": [
+                {
+                    "id": "b1d5534e-f1e6-4990-bef7-a5578d6acf08",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "pandas.io.parsers.readers",
+                    "function": "read_csv",
+                    "tasks": [
+                        {
+                            "name": "pd.read_csv(\"http://www.i3s.unice.fr/~riveill/dataset/Amazon_Unlocked_Mobile/train.csv.gz\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Loading",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "e1c2a428-de2e-4335-83ae-a85875368fab",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "pandas.io.parsers.readers",
+                    "function": "read_csv",
+                    "tasks": [
+                        {
+                            "name": "pd.read_csv(\"http://www.i3s.unice.fr/~riveill/dataset/Amazon_Unlocked_Mobile/val.csv.gz\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Loading",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "4f207bed-80c0-4f3a-ab9d-bd7ae0d941e2",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "pandas.io.parsers.readers",
+                    "function": "read_csv",
+                    "tasks": [
+                        {
+                            "name": "pd.read_csv(\"http://www.i3s.unice.fr/~riveill/dataset/Amazon_Unlocked_Mobile/test.csv.gz\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000000059604643,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Loading",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Exploratory Data Analysis",
+            "tasks": [
+                {
+                    "id": "656399ba-f856-46fb-82a0-aca2c3109eed",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "head",
+                    "tasks": [
+                        {
+                            "name": "TRAIN.head()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.1568304383514454,
+                        "logprobs": [
+                            [
+                                [
+                                    "Expl",
+                                    48.27
+                                ],
+                                [
+                                    "Data",
+                                    26.66
+                                ],
+                                [
+                                    "Visualization",
+                                    25.04
+                                ],
+                                [
+                                    "Others",
+                                    0.04
+                                ]
+                            ],
+                            [
+                                [
+                                    "or",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "atory",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Analysis",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Sub-sampling and Train-test Splitting",
+            "tasks": [
+                {
+                    "id": "0dca8880-7cfc-487b-9388-8c5a26e39fc3",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "pandas",
+                    "function": "concat",
+                    "tasks": [
+                        {
+                            "name": "pd.concat([TRAIN, VAL], axis=0)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0001343563548843,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Sub",
+                                    99.88
+                                ],
+                                [
+                                    " Preparation",
+                                    0.12
+                                ]
+                            ],
+                            [
+                                [
+                                    "-s",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "ampling",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " and",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Train",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "-test",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Split",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "ting",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "f4aa78da-fac4-484d-b728-a1306e300feb",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "fillna",
+                    "tasks": [
+                        {
+                            "name": "TRAIN.fillna(\"\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000004768370445,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "baef899c-d609-4304-94ee-0fb1157b7091",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "fillna",
+                    "tasks": [
+                        {
+                            "name": "TEST.fillna(\"\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000015675898878,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "e1304b2e-673b-405b-93a8-d4712be7ea7f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "array",
+                    "tasks": [
+                        {
+                            "name": "np.array(TRAIN['Reviews'])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0001052562604413,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.98
+                                ],
+                                [
+                                    "Feature",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "74627fdf-a4b3-4ff2-82f3-35faa0e83b99",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "reshape",
+                    "tasks": [
+                        {
+                            "name": "np.array(TRAIN['Reviews']).reshape(-1,1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000755758409308,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.98
+                                ],
+                                [
+                                    "Feature",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "8b530933-27df-4d67-80dc-8db8340d1eaf",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "min",
+                    "tasks": [
+                        {
+                            "name": "np.min(TRAIN['Rating'])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0051646800922898,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.05
+                                ],
+                                [
+                                    "Expl",
+                                    0.88
+                                ],
+                                [
+                                    "Others",
+                                    0.06
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.92
+                                ],
+                                [
+                                    " Sub",
+                                    0.08
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "5dc464ed-4a6e-4875-8eb1-a7b0906b47a1",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "reshape",
+                    "tasks": [
+                        {
+                            "name": "np.array(TRAIN['Rating']-np.min(TRAIN['Rating'])).reshape(-1,1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000773638477818,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.98
+                                ],
+                                [
+                                    "Feature",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "d3f7a4c0-89d5-4f29-b409-58c43912a099",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "array",
+                    "tasks": [
+                        {
+                            "name": "np.array(TRAIN['Rating']-np.min(TRAIN['Rating']))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000823106569299,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.98
+                                ],
+                                [
+                                    "Feature",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "08a9dbad-f9e2-4941-9526-4e7a1f16caaf",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "array",
+                    "tasks": [
+                        {
+                            "name": "np.array(TEST['Reviews'])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000062344538213,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.99
+                                ],
+                                [
+                                    "Feature",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "729b1e00-a263-4f41-b870-c1f77fcdb8d2",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "reshape",
+                    "tasks": [
+                        {
+                            "name": "np.array(TEST['Reviews']).reshape(-1,1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0001807645544976,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.96
+                                ],
+                                [
+                                    "Feature",
+                                    0.04
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "74f8ed9c-5c8f-471d-aab8-e33281ef2ecb",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "array",
+                    "tasks": [
+                        {
+                            "name": "np.array(TEST['Rating']-np.min(TRAIN['Rating']))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0154780582977179,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    96.98
+                                ],
+                                [
+                                    "Feature",
+                                    2.58
+                                ],
+                                [
+                                    "Model",
+                                    0.44
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.99
+                                ],
+                                [
+                                    " Sub",
+                                    0.01
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "b3e1f72f-dab0-4178-908a-522f539e2cf8",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "min",
+                    "tasks": [
+                        {
+                            "name": "np.min(TRAIN['Rating'])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0051646800922898,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    99.05
+                                ],
+                                [
+                                    "Expl",
+                                    0.88
+                                ],
+                                [
+                                    "Others",
+                                    0.06
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.92
+                                ],
+                                [
+                                    " Sub",
+                                    0.08
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "69f8c2b2-c21d-4487-bc7a-0b417be8a970",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "reshape",
+                    "tasks": [
+                        {
+                            "name": "np.array(TEST['Rating']-np.min(TRAIN['Rating'])).reshape(-1,1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0248262031166628,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    95.21
+                                ],
+                                [
+                                    "Feature",
+                                    4.45
+                                ],
+                                [
+                                    "Model",
+                                    0.33
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "f6ad962f-22e6-4593-8c69-e6d951fc2596",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "min",
+                    "tasks": [
+                        {
+                            "name": "np.min(y_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.1853472270641083,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    71.22
+                                ],
+                                [
+                                    "Model",
+                                    27.03
+                                ],
+                                [
+                                    "Others",
+                                    1.48
+                                ],
+                                [
+                                    "Expl",
+                                    0.27
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.93
+                                ],
+                                [
+                                    " Sub",
+                                    0.07
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Validation and Assembling",
+            "tasks": [
+                {
+                    "id": "65c4a86e-ba8d-4ec0-a5f2-efbb9a46d935",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "min",
+                    "tasks": [
+                        {
+                            "name": "np.min(y_test)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0161455822280825,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    96.85
+                                ],
+                                [
+                                    "Data",
+                                    2.14
+                                ],
+                                [
+                                    "Others",
+                                    1.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "3afec31c-6ae9-4c83-b902-d9445c183273",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "nltk",
+                    "function": "word_tokenize",
+                    "tasks": [
+                        {
+                            "name": "word_tokenize(review)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0010114571759967,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    99.8
+                                ],
+                                [
+                                    "Data",
+                                    0.19
+                                ],
+                                [
+                                    "Others",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "78750493-7f40-4a20-913b-309ec991f862",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "X_train.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.013868696256318,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.28
+                                ],
+                                [
+                                    "Feature",
+                                    1.57
+                                ],
+                                [
+                                    "Others",
+                                    0.92
+                                ],
+                                [
+                                    "Model",
+                                    0.22
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "54a4d951-afd1-4ecf-924e-aa921e19a094",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(set(flatten_reviews))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0097222398535375,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    98.08
+                                ],
+                                [
+                                    "Feature",
+                                    1.91
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "e5fb9e02-af88-40f4-82e2-206a1ed89c2a",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "set",
+                    "tasks": [
+                        {
+                            "name": "set(flatten_reviews)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.00730131905464,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    98.56
+                                ],
+                                [
+                                    "Feature",
+                                    1.36
+                                ],
+                                [
+                                    "Others",
+                                    0.08
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Library Loading",
+            "tasks": [
+                {
+                    "id": "d400eba3-a943-4e92-9733-c7baf97ac885",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from nltk import FreqDist",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "1d315eeb-7a51-4f57-9a88-38a628154a8e",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "split",
+                    "tasks": [
+                        {
+                            "name": "txt.split()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.005614849822902,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    98.89
+                                ],
+                                [
+                                    "Others",
+                                    1.0
+                                ],
+                                [
+                                    "Data",
+                                    0.11
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "12b3590b-2c52-48e0-8912-1e2f62e0e660",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "X_train.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.013868696256318,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.28
+                                ],
+                                [
+                                    "Feature",
+                                    1.57
+                                ],
+                                [
+                                    "Others",
+                                    0.92
+                                ],
+                                [
+                                    "Model",
+                                    0.22
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "5fd4c233-5e7d-4955-ac57-c793f67226b3",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(txt.split())",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.4068969391820203,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    50.52
+                                ],
+                                [
+                                    "Data",
+                                    48.97
+                                ],
+                                [
+                                    "Expl",
+                                    0.51
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "47826b5c-00da-44bb-9d05-b137fdb451a8",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "nltk",
+                    "function": "FreqDist",
+                    "tasks": [
+                        {
+                            "name": "FreqDist(lengths)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0347686706135195,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    93.41
+                                ],
+                                [
+                                    "Data",
+                                    5.11
+                                ],
+                                [
+                                    "Expl",
+                                    1.42
+                                ],
+                                [
+                                    "Others",
+                                    0.06
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    99.98
+                                ],
+                                [
+                                    " Selection",
+                                    0.02
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "d5ec234b-d21e-405c-aff1-50284b02cafa",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "nltk",
+                    "function": "FreqDist",
+                    "tasks": [
+                        {
+                            "name": "FreqDist(dict(lengths_fdist.most_common()[:25]))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.5135333591018225,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    43.65
+                                ],
+                                [
+                                    "Feature",
+                                    30.96
+                                ],
+                                [
+                                    "Expl",
+                                    22.65
+                                ],
+                                [
+                                    "Visualization",
+                                    2.24
+                                ],
+                                [
+                                    "Others",
+                                    0.5
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "2445e29b-113d-4ff8-8995-d88ed2471522",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "most_common",
+                    "tasks": [
+                        {
+                            "name": "lengths_fdist.most_common()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.6236769304021492,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    37.93
+                                ],
+                                [
+                                    "Expl",
+                                    35.64
+                                ],
+                                [
+                                    "Others",
+                                    17.37
+                                ],
+                                [
+                                    "Feature",
+                                    9.01
+                                ],
+                                [
+                                    "Model",
+                                    0.03
+                                ],
+                                [
+                                    "Visualization",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.99
+                                ],
+                                [
+                                    " Sub",
+                                    0.01
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "a1334c73-7bf8-452a-b11f-2cfd470bd449",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "dict",
+                    "tasks": [
+                        {
+                            "name": "dict(lengths_fdist.most_common()[:25])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0222781242235286,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    95.69
+                                ],
+                                [
+                                    "Expl",
+                                    1.6
+                                ],
+                                [
+                                    "Others",
+                                    1.6
+                                ],
+                                [
+                                    "Feature",
+                                    1.1
+                                ],
+                                [
+                                    "Visualization",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.99
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Visualization",
+            "tasks": [
+                {
+                    "id": "437fce00-4569-49cd-86a5-99f8998a6469",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "plot",
+                    "tasks": [
+                        {
+                            "name": "first_25.plot()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0010371207677342,
+                        "logprobs": [
+                            [
+                                [
+                                    "Visualization",
+                                    99.9
+                                ],
+                                [
+                                    "Data",
+                                    0.1
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Others",
+            "tasks": [
+                {
+                    "id": "41a0940d-11c4-435a-b334-c3e0b757a3b8",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "max",
+                    "tasks": [
+                        {
+                            "name": "max(lengths)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 2.0034106253498125,
+                        "logprobs": [
+                            [
+                                [
+                                    "Others",
+                                    49.91
+                                ],
+                                [
+                                    "Model",
+                                    30.27
+                                ],
+                                [
+                                    "Data",
+                                    19.55
+                                ],
+                                [
+                                    "Feature",
+                                    0.16
+                                ],
+                                [
+                                    "Expl",
+                                    0.1
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "6f79941e-153c-4382-b6bb-1e5a41969ad6",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "range",
+                    "tasks": [
+                        {
+                            "name": "range(max(lengths))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.4686632150149468,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    50.41
+                                ],
+                                [
+                                    "Others",
+                                    41.79
+                                ],
+                                [
+                                    "Model",
+                                    7.49
+                                ],
+                                [
+                                    "Feature",
+                                    0.3
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    91.96
+                                ],
+                                [
+                                    " Sub",
+                                    8.04
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "c18d9052-49d9-4409-8426-755e01dfcd14",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(X_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0143727888220386,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.36
+                                ],
+                                [
+                                    "Model",
+                                    2.02
+                                ],
+                                [
+                                    "Others",
+                                    0.6
+                                ],
+                                [
+                                    "Expl",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.82
+                                ],
+                                [
+                                    " Sub",
+                                    0.18
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Library Loading",
+            "tasks": [
+                {
+                    "id": "45152706-2e98-4e70-9707-d4dc3ac054a9",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "",
+                    "tasks": [
+                        {
+                            "name": "from nltk import FreqDist",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1,
+                        "logprobs": 100
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "e03eb4a8-2b61-43a5-b880-9da56f32d9ef",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "nltk",
+                    "function": "FreqDist",
+                    "tasks": [
+                        {
+                            "name": "FreqDist([w for txt in X_train.ravel() for w in txt.split()])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0058179002943992,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    98.89
+                                ],
+                                [
+                                    "Data",
+                                    0.94
+                                ],
+                                [
+                                    "Expl",
+                                    0.17
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    99.95
+                                ],
+                                [
+                                    " Selection",
+                                    0.05
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "36ec7705-d8c0-4c80-9cb0-191480bac6fa",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "split",
+                    "tasks": [
+                        {
+                            "name": "txt.split()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.005614849822902,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    98.89
+                                ],
+                                [
+                                    "Others",
+                                    1.0
+                                ],
+                                [
+                                    "Data",
+                                    0.11
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "cac0294d-5401-4b3e-8826-1270711e4f0a",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "X_train.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.013868696256318,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.28
+                                ],
+                                [
+                                    "Feature",
+                                    1.57
+                                ],
+                                [
+                                    "Others",
+                                    0.92
+                                ],
+                                [
+                                    "Model",
+                                    0.22
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "bc4ea007-5d34-4d16-a5fc-f2ac583f4f9c",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "dict",
+                    "tasks": [
+                        {
+                            "name": "dict(fdist.most_common()[:25])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0991323752376954,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    83.92
+                                ],
+                                [
+                                    "Data",
+                                    16.02
+                                ],
+                                [
+                                    "Others",
+                                    0.04
+                                ],
+                                [
+                                    "Expl",
+                                    0.03
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    98.64
+                                ],
+                                [
+                                    " Selection",
+                                    1.36
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "ea1d663b-7326-4904-8d63-ef783c261cc6",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "nltk",
+                    "function": "FreqDist",
+                    "tasks": [
+                        {
+                            "name": "FreqDist(dict(fdist.most_common()[:25]))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0488357723110764,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    93.11
+                                ],
+                                [
+                                    "Data",
+                                    6.54
+                                ],
+                                [
+                                    "Expl",
+                                    0.2
+                                ],
+                                [
+                                    "Others",
+                                    0.14
+                                ],
+                                [
+                                    "Visualization",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    97.63
+                                ],
+                                [
+                                    " Selection",
+                                    2.37
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "ca735ae8-f3a2-4c14-b6c5-5ca93581faae",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "most_common",
+                    "tasks": [
+                        {
+                            "name": "fdist.most_common()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0822621611663716,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    85.54
+                                ],
+                                [
+                                    "Others",
+                                    12.32
+                                ],
+                                [
+                                    "Data",
+                                    1.78
+                                ],
+                                [
+                                    "Expl",
+                                    0.35
+                                ],
+                                [
+                                    "Model",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    99.81
+                                ],
+                                [
+                                    " Selection",
+                                    0.19
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Visualization",
+            "tasks": [
+                {
+                    "id": "10f95263-254d-47c3-9241-47fb6ac95826",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "plot",
+                    "tasks": [
+                        {
+                            "name": "first_25.plot()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0010371207677342,
+                        "logprobs": [
+                            [
+                                [
+                                    "Visualization",
+                                    99.9
+                                ],
+                                [
+                                    "Data",
+                                    0.1
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "4a1f11d7-c808-4466-82fc-154af67a284d",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(X_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0143727888220386,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.36
+                                ],
+                                [
+                                    "Model",
+                                    2.02
+                                ],
+                                [
+                                    "Others",
+                                    0.6
+                                ],
+                                [
+                                    "Expl",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    99.82
+                                ],
+                                [
+                                    " Sub",
+                                    0.18
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "1f0dd915-07e0-429a-a2a1-bf69199d4723",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "most_common",
+                    "tasks": [
+                        {
+                            "name": "fdist.most_common()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0822621611663716,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    85.54
+                                ],
+                                [
+                                    "Others",
+                                    12.32
+                                ],
+                                [
+                                    "Data",
+                                    1.78
+                                ],
+                                [
+                                    "Expl",
+                                    0.35
+                                ],
+                                [
+                                    "Model",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    99.81
+                                ],
+                                [
+                                    " Selection",
+                                    0.19
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "ef543e3a-1d5b-495e-8f5d-10aac8e50bab",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "enumerate",
+                    "tasks": [
+                        {
+                            "name": "enumerate(fdist.most_common())",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0549127715237983,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    97.71
+                                ],
+                                [
+                                    "Others",
+                                    1.35
+                                ],
+                                [
+                                    "Data",
+                                    0.9
+                                ],
+                                [
+                                    "Model",
+                                    0.03
+                                ],
+                                [
+                                    "Expl",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    91.96
+                                ],
+                                [
+                                    " Selection",
+                                    8.04
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "218a50b3-962d-49e7-83cd-5a54fef9eb95",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "y_train.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0230159412146842,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    95.55
+                                ],
+                                [
+                                    "Others",
+                                    2.39
+                                ],
+                                [
+                                    "Model",
+                                    1.2
+                                ],
+                                [
+                                    "Feature",
+                                    0.85
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Exploratory Data Analysis",
+            "tasks": [
+                {
+                    "id": "fb91358e-3b00-43be-be9e-d6cd575761e5",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "pandas.core.series",
+                    "function": "Series",
+                    "tasks": [
+                        {
+                            "name": "pd.Series(y_train.ravel())",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000137720321617,
+                        "logprobs": [
+                            [
+                                [
+                                    "Expl",
+                                    99.93
+                                ],
+                                [
+                                    "Data",
+                                    0.07
+                                ]
+                            ],
+                            [
+                                [
+                                    "or",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "atory",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Analysis",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "998fda85-eeba-4a5e-9821-4ca104c1effd",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "value_counts",
+                    "tasks": [
+                        {
+                            "name": "pd.Series(y_train.ravel()).value_counts()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0021444418908387,
+                        "logprobs": [
+                            [
+                                [
+                                    "Expl",
+                                    98.93
+                                ],
+                                [
+                                    "Data",
+                                    1.07
+                                ]
+                            ],
+                            [
+                                [
+                                    "or",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "atory",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Data",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Analysis",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "4d183401-8bd6-4007-b824-2c2125c26436",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn.pipeline",
+                    "function": "Pipeline",
+                    "tasks": [
+                        {
+                            "name": "Pipeline([\n        ('feature_extraction',  CountVectorizer()),\n        ('classification',  LogisticRegression(multi_class='auto', max_iter=400))\n        ])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000000874200702,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "39bdde6b-f534-4102-8d57-01646836817e",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn.feature_extraction.text",
+                    "function": "CountVectorizer",
+                    "tasks": [
+                        {
+                            "name": "CountVectorizer()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000394574962128,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    99.99
+                                ],
+                                [
+                                    "Model",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "bbcdc325-71fe-4d32-8533-adcb3a336c3b",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn.linear_model",
+                    "function": "LogisticRegression",
+                    "tasks": [
+                        {
+                            "name": "LogisticRegression(multi_class='auto', max_iter=400)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000371522170421,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    99.99
+                                ],
+                                [
+                                    " Training",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "e018337e-5420-4a10-af73-db40444dc841",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "display",
+                    "tasks": [
+                        {
+                            "name": "display(lr_pipeline)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0010005556445265,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    99.7
+                                ],
+                                [
+                                    "Visualization",
+                                    0.29
+                                ],
+                                [
+                                    "Others",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Training",
+            "tasks": [
+                {
+                    "id": "31675802-475e-4a54-a742-16080eaefd2c",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "fit",
+                    "tasks": [
+                        {
+                            "name": "lr_pipeline.fit(X_train.ravel(), y_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Training",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "fe0fa6c3-bca4-4469-ae65-4287d9612a86",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "X_train.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.013868696256318,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    97.28
+                                ],
+                                [
+                                    "Feature",
+                                    1.57
+                                ],
+                                [
+                                    "Others",
+                                    0.92
+                                ],
+                                [
+                                    "Model",
+                                    0.22
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Validation and Assembling",
+            "tasks": [
+                {
+                    "id": "4f866ee3-38f3-40a5-b2ea-ea1f3af8300f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "predict",
+                    "tasks": [
+                        {
+                            "name": "lr_pipeline.predict(X_test.ravel())",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000769466485655,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    99.98
+                                ],
+                                [
+                                    " Training",
+                                    0.02
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "e23d7c8c-6191-407b-b7dc-a2d048250f7a",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "ravel",
+                    "tasks": [
+                        {
+                            "name": "X_test.ravel()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2038976436960398,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    69.03
+                                ],
+                                [
+                                    "Others",
+                                    15.4
+                                ],
+                                [
+                                    "Data",
+                                    14.93
+                                ],
+                                [
+                                    "Feature",
+                                    0.64
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    99.95
+                                ],
+                                [
+                                    " Training",
+                                    0.05
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "c6564b78-ff36-4816-83ad-b9a3617e8218",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn.metrics",
+                    "function": "classification_report",
+                    "tasks": [
+                        {
+                            "name": "classification_report(y_pred, y_test)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "a9f4eae4-0c77-4bc6-876b-36e6760f04c4",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "print",
+                    "tasks": [
+                        {
+                            "name": "print(classification_report(y_pred, y_test))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000000059604643,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "939b8f7c-43dd-403a-9253-24c581304047",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(np.unique(y_train))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2566953651113157,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    53.84
+                                ],
+                                [
+                                    "Expl",
+                                    29.73
+                                ],
+                                [
+                                    "Data",
+                                    8.52
+                                ],
+                                [
+                                    "Feature",
+                                    7.76
+                                ],
+                                [
+                                    "Others",
+                                    0.16
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    93.59
+                                ],
+                                [
+                                    " Validation",
+                                    3.01
+                                ],
+                                [
+                                    " Training",
+                                    2.07
+                                ],
+                                [
+                                    " Parameter",
+                                    1.33
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Data Preparation",
+            "tasks": [
+                {
+                    "id": "3c7b6ec7-13ea-4d94-8ea1-cd451d780e8f",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "unique",
+                    "tasks": [
+                        {
+                            "name": "np.unique(y_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2941558174801677,
+                        "logprobs": [
+                            [
+                                [
+                                    "Data",
+                                    59.71
+                                ],
+                                [
+                                    "Expl",
+                                    17.11
+                                ],
+                                [
+                                    "Feature",
+                                    13.32
+                                ],
+                                [
+                                    "Others",
+                                    6.7
+                                ],
+                                [
+                                    "Model",
+                                    3.16
+                                ]
+                            ],
+                            [
+                                [
+                                    " Preparation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "94447d93-7d1e-4f66-a1fa-473de192177b",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "TextVectorization",
+                    "tasks": [
+                        {
+                            "name": "tf.keras.layers.TextVectorization(max_tokens=max_tokens, # or None\n                                                    standardize='lower_and_strip_punctuation',\n                                                    split='whitespace',\n                                                    ngrams=1,\n                                                    output_mode='count',\n                                                    pad_to_max_tokens=True,\n                                                    vocabulary=None)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0156178420909199,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    96.95
+                                ],
+                                [
+                                    "Model",
+                                    3.02
+                                ],
+                                [
+                                    "Data",
+                                    0.03
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "1eb4d17a-a8a6-434a-927e-fc219ea66e0a",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "adapt",
+                    "tasks": [
+                        {
+                            "name": "vectorize_layer.adapt(X_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2031377382193298,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    96.9
+                                ],
+                                [
+                                    "Feature",
+                                    2.21
+                                ],
+                                [
+                                    "Data",
+                                    0.89
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    59.26
+                                ],
+                                [
+                                    " Training",
+                                    40.73
+                                ],
+                                [
+                                    " Parameter",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "acf61d15-94e6-4d94-8d08-24e1f690e3ca",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "adapt",
+                    "tasks": [
+                        {
+                            "name": "vectorize_layer.adapt(X_train)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2031377382193298,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    96.9
+                                ],
+                                [
+                                    "Feature",
+                                    2.21
+                                ],
+                                [
+                                    "Data",
+                                    0.89
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    59.26
+                                ],
+                                [
+                                    " Training",
+                                    40.73
+                                ],
+                                [
+                                    " Parameter",
+                                    0.02
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Feature Transformation",
+            "tasks": [
+                {
+                    "id": "d3a31f0e-1398-4b06-99ef-f4af85b0e5e6",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "get_vocabulary",
+                    "tasks": [
+                        {
+                            "name": "vectorize_layer.get_vocabulary()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2243983730083614,
+                        "logprobs": [
+                            [
+                                [
+                                    "Feature",
+                                    67.93
+                                ],
+                                [
+                                    "Model",
+                                    27.44
+                                ],
+                                [
+                                    "Others",
+                                    4.34
+                                ],
+                                [
+                                    "Data",
+                                    0.29
+                                ]
+                            ],
+                            [
+                                [
+                                    " Transformation",
+                                    98.2
+                                ],
+                                [
+                                    " Selection",
+                                    1.8
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Others",
+            "tasks": [
+                {
+                    "id": "98e8df85-fd91-4c8c-8ebd-e9bfe17f1120",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "len",
+                    "tasks": [
+                        {
+                            "name": "len(vocabulary)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0771619076414283,
+                        "logprobs": [
+                            [
+                                [
+                                    "Others",
+                                    92.84
+                                ],
+                                [
+                                    "Model",
+                                    4.77
+                                ],
+                                [
+                                    "Data",
+                                    1.99
+                                ],
+                                [
+                                    "Feature",
+                                    0.38
+                                ],
+                                [
+                                    "Library",
+                                    0.03
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "c2908c68-b123-47a1-8681-646795d47786",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.layers",
+                    "function": "Input",
+                    "tasks": [
+                        {
+                            "name": "layers.Input(shape=(nb_features), dtype=tf.string, name='input')",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0002779190556486,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    99.92
+                                ],
+                                [
+                                    "Others",
+                                    0.08
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "691dea4f-594f-4338-a9d6-2485487e6620",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "vectorize_layer",
+                    "tasks": [
+                        {
+                            "name": "vectorize_layer(text_input)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0003933325655192,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    99.89
+                                ],
+                                [
+                                    "Feature",
+                                    0.11
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "41962497-cc1f-4a6c-bc47-9afdf7355ebb",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "enumerate",
+                    "tasks": [
+                        {
+                            "name": "enumerate(hidden_size)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0160094384274683,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    99.61
+                                ],
+                                [
+                                    "Others",
+                                    0.39
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    95.72
+                                ],
+                                [
+                                    " Parameter",
+                                    3.95
+                                ],
+                                [
+                                    " Training",
+                                    0.32
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "008ace95-41c5-4099-a7e1-e424f60f28e7",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.layers",
+                    "function": "Dense",
+                    "tasks": [
+                        {
+                            "name": "layers.Dense(s, activation=hidden_act, name='hidden'+str(i))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.000044027392161,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    99.99
+                                ],
+                                [
+                                    " Training",
+                                    0.01
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Others",
+            "tasks": [
+                {
+                    "id": "fa0889fa-17b8-4e77-811e-c460f0562e44",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "str",
+                    "tasks": [
+                        {
+                            "name": "str(i)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0003067255008737,
+                        "logprobs": [
+                            [
+                                [
+                                    "Others",
+                                    99.97
+                                ],
+                                [
+                                    "Model",
+                                    0.03
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Training",
+            "tasks": [
+                {
+                    "id": "5f41f968-985d-4d33-b09f-187640a09001",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.layers",
+                    "function": "Dropout",
+                    "tasks": [
+                        {
+                            "name": "layers.Dropout(dropout_rate)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2529137320204478,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Training",
+                                    63.7
+                                ],
+                                [
+                                    " As",
+                                    36.3
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Building and Training",
+            "tasks": [
+                {
+                    "id": "bb3577a2-57ad-475b-ba09-5f5956c13606",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.layers",
+                    "function": "Dense",
+                    "tasks": [
+                        {
+                            "name": "layers.Dense(num_classes, activation='softmax', name='output')",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000002384185602,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "902371c9-d2db-4b8c-8718-2d62ddec1d2d",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.models",
+                    "function": "Model",
+                    "tasks": [
+                        {
+                            "name": "Model(text_input, outputs)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "9a7b7b43-6bb8-4e5f-8d70-bbbc219a15f2",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "summary",
+                    "tasks": [
+                        {
+                            "name": "model.summary()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000107287887177,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "f32a3858-8593-4812-8644-78e0de3be897",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.utils",
+                    "function": "plot_model",
+                    "tasks": [
+                        {
+                            "name": "utils.plot_model(model, show_shapes=True,\n    show_dtype=True,\n    show_layer_names=True,\n    rankdir=\"TB\",\n    expand_nested=True,\n    dpi=96,\n    show_layer_activations=True,\n    show_trainable=True,\n                )",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.240846598970875,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    52.34
+                                ],
+                                [
+                                    "Visualization",
+                                    47.66
+                                ]
+                            ],
+                            [
+                                [
+                                    " As",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    "sembling",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Training",
+            "tasks": [
+                {
+                    "id": "722c0914-5747-4948-b047-71117dbc8391",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "compile",
+                    "tasks": [
+                        {
+                            "name": "model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.001692710137114,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Training",
+                                    99.66
+                                ],
+                                [
+                                    " As",
+                                    0.34
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "28b8d302-ea5d-4eab-be68-332bcd51d3f4",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "tensorflow.keras.callbacks",
+                    "function": "EarlyStopping",
+                    "tasks": [
+                        {
+                            "name": "callbacks.EarlyStopping(monitor='val_accuracy', mode='max',\n                                          min_delta=0.0005,  patience=5, \n                                          restore_best_weights=True,\n                                          verbose=1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.1745480748555754,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Training",
+                                    72.49
+                                ],
+                                [
+                                    " Validation",
+                                    27.51
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "918da5fe-28db-4712-b370-cffbcec5a480",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "fit",
+                    "tasks": [
+                        {
+                            "name": "model.fit(X_train, y_train,\n                    validation_split=0.2,\n                    epochs=1000, batch_size=256,\n                    callbacks=callbacks_list,\n                    verbose=1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Training",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Visualization",
+            "tasks": [
+                {
+                    "id": "400202d8-512c-4eaa-81f9-17d5201debf5",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "matplotlib.pyplot",
+                    "function": "plot",
+                    "tasks": [
+                        {
+                            "name": "plt.plot(history.history['loss'], label=\"loss\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.2302160242735225,
+                        "logprobs": [
+                            [
+                                [
+                                    "Visualization",
+                                    81.29
+                                ],
+                                [
+                                    "Model",
+                                    18.71
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Validation and Assembling",
+            "tasks": [
+                {
+                    "id": "fd357313-b98d-45ec-91ea-42f5dff90d2c",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "matplotlib.pyplot",
+                    "function": "plot",
+                    "tasks": [
+                        {
+                            "name": "plt.plot(history.history['val_loss'], label=\"val_loss\")",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0493057339324423,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    99.54
+                                ],
+                                [
+                                    "Visualization",
+                                    0.46
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    91.24
+                                ],
+                                [
+                                    " Training",
+                                    8.76
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Visualization",
+            "tasks": [
+                {
+                    "id": "377f63b1-5152-42a2-90a2-29d4ec6b8ab8",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "matplotlib.pyplot",
+                    "function": "show",
+                    "tasks": [
+                        {
+                            "name": "plt.show()",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000021457672403,
+                        "logprobs": [
+                            [
+                                [
+                                    "Visualization",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        },
+        {
+            "name": "Model Validation and Assembling",
+            "tasks": [
+                {
+                    "id": "263f122d-2513-45db-b27a-b3f75712ca69",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "predict",
+                    "tasks": [
+                        {
+                            "name": "model.predict(X_test)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000011324877516,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "23f1b56f-3b2e-4632-b764-1496a40641cd",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "numpy",
+                    "function": "argmax",
+                    "tasks": [
+                        {
+                            "name": "np.argmax(y_pred_encoded,axis=1)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0000071525390124,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "9dce0412-69d8-44fa-9c7c-082e5573cde5",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "",
+                    "function": "print",
+                    "tasks": [
+                        {
+                            "name": "print(classification_report(y_test, y_pred))",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "id": "573c2f94-f1d8-406c-8253-2c15bb59ec17",
+                    "algoFamily": null,
+                    "algoName": null,
+                    "library": "sklearn.metrics",
+                    "function": "classification_report",
+                    "tasks": [
+                        {
+                            "name": "classification_report(y_test, y_pred)",
+                            "tasks": []
+                        }
+                    ],
+                    "metadata": {
+                        "perplexity": 1.0,
+                        "logprobs": [
+                            [
+                                [
+                                    "Model",
+                                    100.0
+                                ]
+                            ],
+                            [
+                                [
+                                    " Validation",
+                                    100.0
+                                ]
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "outputs_ids": []
+        }
+    ],
+    "outputs": {}
+}

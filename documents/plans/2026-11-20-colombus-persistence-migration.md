@@ -1,8 +1,7 @@
 # Colombus persistence migration — implementation plan
 
 Date: 2026-11-20
-Status: In progress
-Scope: Stage 1 only — the persistence project owns the data layer and exposes it to
+Status: In progressScope: Stage 1 only — the persistence project owns the data layer and exposes it to
 colombus through a Strawberry GraphQL API.
 
 ## Goal
@@ -41,8 +40,8 @@ colombus app via GraphQL (`strawberry[fastapi]`).
 ## Slices (each slice = one commit + one ADR, no pushes)
 
 1. **Docs** — this plan + architecture ADR. (`docs(plans)`, `docs(adr)`)
-2. **Models** — `app/db/models.py` with all 8 tables; round-trip + metadata tests fed by
-   the JSON fixtures. ADR: model ownership & schema fidelity.
+2. **Models** ✅ — `app/db/models.py` with all 8 tables; round-trip + metadata tests fed by
+   the JSON fixtures. ADR-0002: model ownership & schema fidelity.
 3. **Engine/sessions/config** — test-bound engine, `get_session` dependency,
    `statement_timeout` setting. ADR: session & DB settings design.
 4. **Alembic baseline** — one baseline revision of the colombus schema replacing the
