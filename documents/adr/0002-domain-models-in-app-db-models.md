@@ -19,8 +19,9 @@ colombus's definitions.
   demo `User`/`Item` scaffold is dropped (removed in the cleanup slice).
 - Tables are ported **schema-faithfully** from `colombus/app/models/sql_model.py`:
   JSON columns via `Field(sa_type=JSON)`, `code.content` as `LongString`,
-  `ondelete="CASCADE"` foreign keys, the `ix_step_profile_id_position` index and
-  per-column `index=True`, and `MatchingProfile`'s composite primary key
+  `ondelete="CASCADE"` foreign keys (the exception is `MatchingProfile.profile_id`,
+  which faithfully carries no `ondelete`), the `ix_step_profile_id_position` index
+  and per-column `index=True`, and `MatchingProfile`'s composite primary key
   (`pattern_hash`, `profile_id`) with no scalar `id`.
 - Engine/session/settings stay out of this module — they live in `app/db/session.py`
   and `app/core/config.py` (see ADR-0003).

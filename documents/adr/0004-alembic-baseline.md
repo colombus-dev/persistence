@@ -31,7 +31,8 @@ eight real domain tables with versioned migrations.
 
 - Migrations become the single source of truth for the shape of the DB; the
   models and the migration must agree, enforced by a test that upgrades a fresh
-  DB to head and asserts the resulting table set equals the model metadata.
+  DB to head and asserts the resulting table set equals the model metadata and
+  that, column by column, name/nullability/primary-key also match the models.
 - Colombus can stop calling `create_db_and_tables()` once it is pointed at
   persistence's schema (handled in the strangler sequencing).
 - Any future schema change is a new migration appended after this baseline,

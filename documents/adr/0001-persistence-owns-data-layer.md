@@ -20,8 +20,9 @@ present its content to colombus through a well-defined interface.
 - The `persistence` project becomes the **single owner** of the PostgreSQL schema for
   the colombus domain tables, managed via Alembic migrations (the current `create_all`
   approach is retired).
-- Persistence exposes the database content to colombus over a **Strawberry GraphQL
-  API** (read queries + mutations), plus the existing REST plumbing where needed.
+- Persistence exposes the database content to colombus over a **Strawberry
+  GraphQL API** (read queries + mutations). The persistence API is GraphQL-only;
+  the template REST scaffold is dropped once the real surface lands (ADR-0007).
 - Ownership moves incrementally (**strangler**): persistence gains the schema and
   GraphQL surface first; colombus drops its own table creation; colombus endpoints
   migrate from direct ORM imports to GraphQL one at a time. The colombus repo is left
