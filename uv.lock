@@ -779,7 +779,7 @@ requires-dist = [
     { name = "pydantic", specifier = "==2.14.4" },
     { name = "pydantic-settings", specifier = "==2.16.3" },
     { name = "sqlmodel", specifier = "==0.0.50" },
-    { name = "strawberry-graphql", extras = ["fastapi"], specifier = ">=0.341.2" },
+    { name = "strawberry-graphql", extras = ["fastapi"], specifier = "==0.341.2" },
     { name = "strawberry-sqlalchemy-mapper", specifier = "==0.9.0" },
 ]
 

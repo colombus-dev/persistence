@@ -1,7 +1,9 @@
 # Colombus persistence migration — implementation plan
 
 Date: 2026-11-20
-Status: In progressScope: Stage 1 only — the persistence project owns the data layer and exposes it to
+Status: In progress
+
+Scope: Stage 1 only — the persistence project owns the data layer and exposes it to
 colombus through a Strawberry GraphQL API.
 
 ## Goal
@@ -50,8 +52,8 @@ colombus app via GraphQL (`strawberry[fastapi]`).
    per-request session. ADR-0005: GraphQL API design.
 6. **GraphQL mutations** ✅ — create/delete project & profile, save/delete pattern.
    ADR-0006: mutation surface.
-7. **Cleanup & validation** — remove demo scaffold, fixture helper into `tests/`,
-   full-suite green + pre-commit. ADR: consolidation.
+7. **Cleanup & validation** ✅ — remove demo scaffold, fixture helper into `tests/`,
+   full-suite green + pre-commit. ADR-0007: consolidation.
 
 ## Review focus
 

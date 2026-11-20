@@ -20,8 +20,8 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 # target_metadata = None
 
-# Domain schema is the single authority; the demo User/Item scaffold
-# (app/models.py) is dropped in the cleanup slice.
+# Domain schema is the single authority. The demo User/Item scaffold was removed
+# in the cleanup slice (ADR-0007).
 import app.db.models  # noqa: F401,E402  (register tables on SQLModel.metadata)
 from app.core.config import settings  # noqa: E402
 
