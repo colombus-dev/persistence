@@ -1,1 +1,132 @@
-# persistence
+# FastAPI Project
+
+## Requirements
+
+* [Docker](https://www.docker.com/).
+* [uv](https://docs.astral.sh/uv/) for Python package and environment management.
+
+## Local Development
+
+We use [prek](https://github.com/j178/prek) for pre-commit:
+
+```console
+$ uv run prek install  # one time to init pre-commit
+$ uv run prek run
+```
+
+Run the persistence app locally and connect it to PostgreSQL in Docker Compose.
+
+From the project root, start PostgreSQL:
+
+```console
+$ docker compose up -d persistence_db
+```
+
+Then, from `./app/`, install the dependencies, prepare the database, and start the development server:
+
+```console
+$ uv sync
+$ uv run bash scripts/prestart.sh
+$ uv run fastapi dev
+```
+
+The API is available at `http://localhost:8000`, with automatic interactive docs at `http://localhost:8000/docs`.
+
+## General Workflow
+
+Run persistence app commands from `./app/` with `uv run`. Make sure your editor uses the Python interpreter at `.venv/bin/python` in the project root.
+
+Modify or add SQLModel models for data and SQL tables in `./app/models.py`, API endpoints in `./app/api/`, CRUD (Create, Read, Update, Delete) utils in `./app/crud.py`.
+
+## VS Code
+
+There are already configurations in place to run the persistence app through the VS Code debugger, so that you can use breakpoints, pause and explore variables, etc.
+
+The setup is also already configured so you can run the tests through the VS Code Python tests tab.
+
+## Full Stack with Docker Compose
+
+To run the persistence app and built frontend in Docker Compose:
+
+```console
+$ docker compose run --rm persistence app bash scripts/prestart.sh
+$ docker compose watch
+```
+
+The application is available at `http://localhost:8000`.
+
+### Docker Compose Override
+
+The `compose.override.yml` file contains local settings for published ports, source synchronization, automatic image rebuilds, and persistence app reloads. Docker Compose applies it automatically when you run `docker compose` without an explicit file list.
+
+To open a shell in the persistence app container:
+
+```console
+$ docker compose exec persistence app bash
+```
+
+## persistence app Tests
+
+To test the persistence app from the `persistence app` directory, run:
+
+```console
+$ uv run bash scripts/test.sh
+```
+
+The tests run with Pytest. Modify existing tests or add new ones in `./app/tests/`.
+
+If you use GitHub Actions, the tests will run automatically.
+
+### Test a Running Stack
+
+If your stack is already up and you just want to run the tests, you can use:
+
+```bash
+docker compose exec persistence app bash scripts/tests-start.sh
+```
+
+The `/app/persistence app/scripts/tests-start.sh` script calls `pytest`. If you need to pass extra arguments to `pytest`, you can pass them to that command and they will be forwarded.
+
+For example, to stop on first error:
+
+```bash
+docker compose exec persistence app bash scripts/tests-start.sh -x
+```
+
+### Test Coverage
+
+When the tests run, they generate `htmlcov/index.html`. Open it in your browser to inspect the test coverage.
+
+## Migrations
+
+Make sure you create a revision of your models and upgrade the database with that revision every time you change them. From the `persistence app` directory, use `uv` to run Alembic against the PostgreSQL container:
+
+* Alembic is already configured to import your SQLModel models from `./app/models.py`.
+
+* After changing a model (for example, adding a column), create a revision:
+
+```console
+$ uv run alembic revision --autogenerate -m "Add column last_name to User model"
+```
+
+* Commit to the git repository the files generated in the alembic directory.
+
+* After creating the revision, run the migration in the database (this is what will actually change the database):
+
+```console
+$ uv run alembic upgrade head
+```
+
+If you don't want to use migrations at all, uncomment the lines in the file at `./app/core/db.py` that end in:
+
+```python
+SQLModel.metadata.create_all(engine)
+```
+
+and comment the line in the file `scripts/prestart.sh` that contains:
+
+```console
+$ alembic upgrade head
+```
+
+If you don't want to start with the default models and want to remove them / modify them, from the beginning, without having any previous revision, you can remove the revision files (`.py` Python files) under `./app/alembic/versions/`. And then create a first migration as described above.
