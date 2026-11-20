@@ -1,0 +1,70 @@
+# Colombus persistence migration — implementation plan
+
+Date: 2026-11-20
+Status: In progress
+Scope: Stage 1 only — the persistence project owns the data layer and exposes it to
+colombus through a Strawberry GraphQL API.
+
+## Goal
+
+Move colombus's persistence layer into the dedicated `persistence` repo and make
+`persistence` the single owner of the PostgreSQL schema, exposing its content to the
+colombus app via GraphQL (`strawberry[fastapi]`).
+
+## Approach
+
+- **Stage 1 scope** (this plan): the 8 SQLModel tables owned by colombus today
+  (`Project`, `Profile`, `Step`, `CellOutput`, `MetaInstruction`, `Code`, `Pattern`,
+  `MatchingProfile`), the engine, sessions, DB settings (incl. `statement_timeout`),
+  an Alembic baseline replacing the demo `User`/`Item` scaffold, and a GraphQL read +
+  mutate surface over the tables.
+- **Not in Stage 1**: colombus routers/services, the `ppm_to_regex` Postgres function,
+  and the raw-SQL PPM contract. These stay in colombus and are read over GraphQL; they
+  are flagged for a later stage.
+- **Method**: strict TDD — red → green → refactor for every artifact, driven by real
+  JSON-profile resources reused from colombus.
+- **Sequencing**: strangler. Persistence owns the schema via Alembic; colombus stops
+  calling `create_db_and_tables()`; colombus endpoints migrate to GraphQL one at a time.
+  The colombus repo is **not touched** in this implementation slice.
+
+## Key decisions
+
+- GraphQL types generated with `strawberry-sqlalchemy-mapper==0.9.0`
+  (`always_use_list=True`, JSON supported natively, relationships auto-batched).
+- `MatchingProfile` has a composite primary key with no scalar `id`; it gets a manually
+  registered Strawberry type rather than an auto-mapped one.
+- Demo `User`/`Item` models and their scaffold (`app/models.py`, `crud.py`, REST
+  `items` route) are dropped once the real models and baseline migration land.
+- Test data driven by JSON profile fixtures (full + trimmed) committed under
+  `tests/fixtures/profiles/`.
+
+## Slices (each slice = one commit + one ADR, no pushes)
+
+1. **Docs** — this plan + architecture ADR. (`docs(plans)`, `docs(adr)`)
+2. **Models** — `app/db/models.py` with all 8 tables; round-trip + metadata tests fed by
+   the JSON fixtures. ADR: model ownership & schema fidelity.
+3. **Engine/sessions/config** — test-bound engine, `get_session` dependency,
+   `statement_timeout` setting. ADR: session & DB settings design.
+4. **Alembic baseline** — one baseline revision of the colombus schema replacing the
+   `User`/`Item` chain; migration-verification test. ADR: baseline strategy.
+5. **GraphQL queries** — auto-mapped read queries + manual `MatchingProfile` type +
+   per-request session. ADR: GraphQL API design.
+6. **GraphQL mutations** — create/delete project & profile, save/delete pattern. ADR:
+   mutation surface.
+7. **Cleanup & validation** — remove demo scaffold, fixture helper into `tests/`,
+   full-suite green + pre-commit. ADR: consolidation.
+
+## Review focus
+
+- Schema fidelity vs colombus's SQLModel definitions (column types, FKs, indexes,
+  JSON columns, composite PK).
+- GraphQL contract: nested `profile -> steps -> metaInstructions -> codes ->
+  cellOutputs` from a JSON fixture round-trips losslessly.
+- DB session lifecycle: one session per request, released after; no leaked sessions in
+  tests.
+
+## Deferred
+
+- `ppm_to_regex` function + raw-SQL PPM template contract.
+- Writing to colombus to consume GraphQL (colombus untouched this slice).
+- GraphQL pagination beyond plain lists; authN/AuthZ on GraphQL.
