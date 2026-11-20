@@ -1,5 +1,7 @@
 from logging.config import fileConfig
 
+import os
+
 from alembic import context
 from sqlalchemy import engine_from_config, pool, Engine
 
@@ -18,8 +20,12 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 # target_metadata = None
 
-from app.models import SQLModel  # noqa
-from app.core.config import settings # noqa
+# Domain schema is the single authority; the demo User/Item scaffold
+# (app/models.py) is dropped in the cleanup slice.
+import app.db.models  # noqa: F401,E402  (register tables on SQLModel.metadata)
+from app.core.config import settings  # noqa: E402
+
+from sqlmodel import SQLModel  # noqa: E402
 
 target_metadata = SQLModel.metadata
 
@@ -30,6 +36,10 @@ target_metadata = SQLModel.metadata
 
 
 def get_url() -> str:
+    # Allow tests to point migrations at a dedicated database via env var.
+    override = os.environ.get("ALEMBIC_DATABASE_URL")
+    if override:
+        return override
     if settings.FASTAPI_ENV == "production":
         return str(settings.DATABASE_URL)
     return str(settings.DATABASE_URL_LOCALHOST)
