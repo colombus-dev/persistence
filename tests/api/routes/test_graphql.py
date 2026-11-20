@@ -12,16 +12,16 @@ from app.main import app
 client: TestClient = TestClient(app)
 
 
-def test_hello_query() -> None:
-    response = client.get("/graphql", params={"query": "{ hello }"})
+def test_get_query() -> None:
+    response = client.get("/graphql", params={"query": "{ onePlusOne }"})
     assert response.status_code == 200
-    assert response.json() == {"data": {"hello": "world"}}
+    assert response.json() == {"data": {"onePlusOne": 2}}
 
 
 def test_post_query() -> None:
-    response = client.post("/graphql", json={"query": "{ hello }"})
+    response = client.post("/graphql", json={"query": "{ onePlusOne }"})
     assert response.status_code == 200
-    assert response.json() == {"data": {"hello": "world"}}
+    assert response.json() == {"data": {"onePlusOne": 2}}
 
 
 def test_introspection() -> None:
