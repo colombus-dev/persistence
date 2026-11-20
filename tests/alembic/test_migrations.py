@@ -15,7 +15,8 @@ from pathlib import Path
 
 from alembic import command
 from alembic.config import Config
-from sqlalchemy.engine import Engine
+from sqlalchemy.engine import Engine, Inspector
+from sqlalchemy.sql.schema import Table
 from sqlmodel import SQLModel, Session, create_engine, inspect, select
 
 from app.db.models import Profile, Project
@@ -68,6 +69,64 @@ def test_baseline_migration_builds_all_domain_tables() -> None:
     model_tables = set(SQLModel.metadata.tables)
     assert table_names - {"alembic_version"} == model_tables
     assert not table_names.isdisjoint(model_tables)
+
+
+def _db_columns(inspector: "Inspector", table: str) -> dict[str, bool]:
+    """Map migrated column name -> nullable from the inspector."""
+    return {col["name"]: bool(col["nullable"]) for col in inspector.get_columns(table)}
+
+
+def _db_pk(inspector: "Inspector", table: str) -> set[str]:
+    """Primary-key column names of a migrated table."""
+    return set(inspector.get_pk_constraint(table)["constrained_columns"])
+
+
+def _model_columns(table: "Table") -> dict[str, bool]:
+    """Map model column name -> nullable from the metadata."""
+    return {col.name: bool(col.nullable) for col in table.columns}
+
+
+def _model_pk(table: "Table") -> set[str]:
+    """Primary-key column names from the model metadata."""
+    return {col.name for col in table.primary_key.columns}
+
+
+def test_baseline_migration_column_parity() -> None:
+    """Every migrated column matches the models on name, nullability and PK.
+
+    Complements the table-name check: a migration that renames, drops, makes
+    nullable, or changes the primary key of any column now fails the suite
+    instead of silently diverging. Column SQL types are not compared here
+    because SQLModel's ``AutoString``/``Uuid`` render as Postgres
+    ``VARCHAR``/``UUID`` in the inspector; the round-trip test covers value
+    fidelity.
+    """
+    config = _alembic_config()
+    _reset_to_head(config)
+
+    engine: Engine = create_engine(MIGRATION_DB_URL)
+    try:
+        inspector = inspect(engine)
+        for table_name, table in SQLModel.metadata.tables.items():
+            db_cols = _db_columns(inspector, table_name)
+            model_cols = _model_columns(table)
+            assert set(db_cols) == set(model_cols), (
+                f"column set differs for {table_name!r}: "
+                f"DB={sorted(db_cols)} model={sorted(model_cols)}"
+            )
+            for name in model_cols:
+                assert db_cols[name] == model_cols[name], (
+                    f"column {table_name}.{name} nullable: DB={db_cols[name]} "
+                    f"model={model_cols[name]}"
+                )
+            db_pk = _db_pk(inspector, table_name)
+            model_pk = _model_pk(table)
+            assert db_pk == model_pk, (
+                f"primary key differs for {table_name!r}: DB={sorted(db_pk)} "
+                f"model={sorted(model_pk)}"
+            )
+    finally:
+        engine.dispose()
 
 
 def test_baseline_profile_roundtrips_through_migrated_db(
