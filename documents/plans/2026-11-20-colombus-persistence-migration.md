@@ -48,8 +48,8 @@ colombus app via GraphQL (`strawberry[fastapi]`).
    `User`/`Item` chain; migration-verification test. ADR-0004: Alembic ownership.
 5. **GraphQL queries** ✅ — auto-mapped read queries + manual `MatchingProfile` type +
    per-request session. ADR-0005: GraphQL API design.
-6. **GraphQL mutations** — create/delete project & profile, save/delete pattern. ADR:
-   mutation surface.
+6. **GraphQL mutations** ✅ — create/delete project & profile, save/delete pattern.
+   ADR-0006: mutation surface.
 7. **Cleanup & validation** — remove demo scaffold, fixture helper into `tests/`,
    full-suite green + pre-commit. ADR: consolidation.
 
