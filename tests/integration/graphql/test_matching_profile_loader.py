@@ -4,19 +4,16 @@ The ``profile`` field of ``MatchingProfileType`` must resolve through the
 mapper's dataloader so a ``matchingProfiles { profile { ... } }`` query batches
 profile lookups into a single SELECT instead of one query per match row
 (ADR-0010). This test counts profile-table SELECTs issued during the query and
-asserts the load stays constant regardless of how many match rows exist.
+asserts the load stays constant regardless of how many match rows exist — the
+N+1 guard is enforced by the reusable ``assert_queries`` fixture.
 """
 
 import asyncio
-import re
 
-from sqlalchemy import event
 from sqlmodel import Session
 
 import app.db.models as M
 from app.graphql import build_schema_context, finalize_schema
-
-_PROFILE_FROM_RE = re.compile(r"\bfrom\s+profile\b", re.IGNORECASE)
 
 
 def _execute(session: Session, query: str) -> dict:
@@ -32,26 +29,9 @@ def _execute(session: Session, query: str) -> dict:
     return asyncio.run(run())
 
 
-def _count_profile_selects(engine, session: Session) -> list[int]:
-    """Return a list appending the number of profile-table SELECTs per call."""
-    counts: list[int] = []
-    # Drop identity-map hits so each lookup must query the database.
-    session.expunge_all()
-
-    def _before_cursor_execute(
-        _conn, _cursor, statement, _parameters, _context, _executemany
-    ) -> None:
-        if _PROFILE_FROM_RE.search(statement):
-            if counts:
-                counts[-1] += 1
-            else:
-                counts.append(1)
-
-    event.listen(engine, "before_cursor_execute", _before_cursor_execute)
-    return counts
-
-
-def test_matching_profile_loads_batch_relationship(session: Session) -> None:
+def test_matching_profile_loads_batch_relationship(
+    session: Session, assert_queries
+) -> None:
     project = M.Project(name="batch-parent")
     session.add(project)
     session.flush()
@@ -79,10 +59,13 @@ def test_matching_profile_loads_batch_relationship(session: Session) -> None:
     assert names == ["batch-0", "batch-1", "batch-2"]
 
     # The profile lookup must be a single batched SELECT, not one per match.
-    counts = _count_profile_selects(session.get_bind(), session)
+    session.expunge_all()
+    assert_queries.reset()
     _execute(
         session,
         "{ matchingProfiles { patternHash profile { name } } }",
     )
-    assert counts, "expected at least one profile SELECT"
-    assert counts[0] == 1, f"expected 1 batched profile SELECT, got {counts[0]}"
+    profile_selects = assert_queries.count("profile")
+    assert profile_selects == 1, (
+        f"expected 1 batched profile SELECT, got {profile_selects}"
+    )
