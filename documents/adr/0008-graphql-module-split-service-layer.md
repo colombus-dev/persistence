@@ -14,7 +14,7 @@ request-context/schema wiring (`build_schema_context`, `get_graphql_context`,
 commit touching one concern churns all of them.
 
 Independent of that, the mutation resolvers embed domain decisions inline —
-`create_profile` defaults `json_profile` to `{}`, `save_pattern` defaults
+`create_profile` defaults `json_profile` to `{}`, `create_pattern` defaults
 `json_pattern` to a fabricated `{"name": ..., "groups": []}` structure. These
 rules are only reachable through GraphQL, so they are untestable in isolation
 and hard to reuse if a non-GraphQL caller (a script, a future CLI) ever needs to
@@ -40,7 +40,7 @@ test imports do not churn.
 Add a small service layer:
 
 - `app/services/profiles.py` — `create_profile`, `delete_profile`.
-- `app/services/patterns.py` — `save_pattern`, `delete_pattern`.
+- `app/services/patterns.py` — `create_pattern`, `delete_pattern`.
 
 Each service function owns the creation/defaulting rules currently inline in the
 resolvers and returns the built `SQLModel` instance. Resolvers become thin

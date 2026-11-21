@@ -41,15 +41,27 @@ The app is served on `http://localhost:8187` (see `compose.override.yml`).
 
 ## Tests
 
-The `app_test` and `app_mig_test` databases must exist on the running Postgres
-(see `docker compose up -d persistence_db`). Then:
+The test tree is split into two tiers ([ADR-0011](./documents/adr/0011-testing-tier-split.md)):
+
+- `tests/unit/` — DB-free: pure builder/defaulting rules and mocked-session
+  resolver tests. Runnable **without** Postgres running:
+  ```console
+  $ uv run pytest tests/unit
+  ```
+- `tests/integration/` — needs the real database: session-bound services,
+  GraphQL query/mutation round-trips, DB round-trips, migration-vs-model parity,
+  and the HTTP contract.
+
+The integration tier needs the `app_test` and `app_mig_test` databases on a
+running Postgres (see `docker compose up -d persistence_db`). Then:
 
 ```console
-$ uv run bash scripts/test.sh
+$ uv run bash scripts/test.sh        # full suite (unit + integration) + coverage
+$ uv run pytest tests/integration    # integration tier only
 ```
 
-Tests exercise the real database, including migration-vs-model parity and
-GraphQL query/mutation round-trips.
+The full suite exercises the real database, including migration-vs-model parity
+and GraphQL query/mutation round-trips.
 
 ## Migrations
 

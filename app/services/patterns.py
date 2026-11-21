@@ -15,7 +15,7 @@ from sqlmodel import Session
 import app.db.models as models
 
 
-def save_pattern(
+def create_pattern(
     *,
     project_id: uuid.UUID,
     name: str,

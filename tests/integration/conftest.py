@@ -12,7 +12,7 @@ import app.db.models  # noqa: F401  (register tables on SQLModel.metadata)
 from app.main import app  # noqa: E402
 from tests.profile_types import ProfileJson
 
-FIXTURES_DIR = Path(__file__).parent / "fixtures"
+FIXTURES_DIR = Path(__file__).parent.parent / "fixtures"
 
 # Dedicated test database on localhost (not the docker-network prod URL).
 TEST_DATABASE_URL = (

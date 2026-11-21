@@ -90,7 +90,7 @@ class Mutation:
         dsl_content: str | None = None,
     ) -> PatternType:
         session: Session = info.context["session"]
-        pattern = patterns.save_pattern(
+        pattern = patterns.create_pattern(
             project_id=project_id,
             name=name,
             json_pattern=cast(dict[str, Any], json_pattern),

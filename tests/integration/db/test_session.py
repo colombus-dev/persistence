@@ -13,7 +13,7 @@ from sqlalchemy.engine import Engine
 from sqlmodel import text
 
 import app.db.session as db_session
-from tests.conftest import TEST_DATABASE_URL
+from tests.integration.conftest import TEST_DATABASE_URL
 
 
 def test_query_timeout_setting_defaults_to_colombus_value() -> None:
