@@ -1,6 +1,6 @@
 # ADR-0005: Read-only GraphQL query layer over the domain tables
 
-- Status: Accepted
+- Status: **Superseded** by [ADR-0010](0010-matchingprofile-dataloader-batching.md)
 - Date: 2026-11-20
 - Plan: documents/plans/2026-11-20-colombus-persistence-migration.md
 

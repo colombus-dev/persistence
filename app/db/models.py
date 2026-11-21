@@ -178,3 +178,8 @@ class Pattern(SQLModel, table=True):
 class MatchingProfile(SQLModel, table=True):
     pattern_hash: str = Field(primary_key=True)
     profile_id: uuid.UUID = Field(primary_key=True, foreign_key="profile.id")
+    # One-directional many-to-one so the mapper's dataloader can batch
+    # `profile_id -> Profile` lookups (ADR-0010). No back-populates: a reverse
+    # `matchingProfiles` collection on Profile would need a manual GraphQL type
+    # and is not exposed. Relationships add no columns, so this is mapper-only.
+    profile: "Profile" = Relationship()

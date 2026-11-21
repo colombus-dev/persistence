@@ -12,8 +12,7 @@ from __future__ import annotations
 import uuid
 
 import strawberry
-from sqlalchemy import Uuid
-from sqlmodel import Session
+from sqlalchemy import Uuid, inspect
 from sqlmodel.sql.sqltypes import AutoString
 from strawberry_sqlalchemy_mapper import StrawberrySQLAlchemyMapper
 
@@ -75,8 +74,13 @@ class MatchingProfileType:
     profile_id: uuid.UUID
 
     @strawberry.field
-    def profile(self, info: strawberry.Info) -> ProfileType:
-        session: Session = info.context["session"]
-        result = session.get(models.Profile, self.profile_id)
+    async def profile(self, info: strawberry.Info) -> ProfileType:
+        # Resolve through the mapper's dataloader so a `matchingProfiles {
+        # profile { ... } }` query batches lookups into one SELECT (ADR-0010).
+        # Key is the local FK column value; the loader's load_fn groups on the
+        # remote `id`. Returns a mapped ProfileType at runtime.
+        relationship = inspect(models.MatchingProfile).relationships["profile"]
+        loader = info.context["sqlalchemy_loader"]
+        result = await loader.loader_for(relationship).load((self.profile_id,))
         assert result is not None
         return result  # type: ignore[bad-return]  # mapper types are runtime-generated
