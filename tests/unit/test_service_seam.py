@@ -97,3 +97,61 @@ def test_delete_profile_ok_false_skips_commit_when_service_says_missing(
     )
     assert data["deleteProfile"] == {"ok": False}
     assert session.committed is False
+
+
+def test_create_project_delegates_to_service_and_applies_write_contract(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.services import projects
+
+    project = M.Project(name="delegated")
+    monkeypatch.setattr(projects, "create_project", lambda **_kwargs: project)
+    session = FakeSession()
+
+    data = run_gql(
+        schema,
+        "mutation($name: String!) { createProject(name: $name) { id name } }",
+        context={"session": session},
+        variables={"name": "delegated"},
+    )
+    assert data["createProject"] == {"id": str(project.id), "name": "delegated"}
+    (added,) = session.added
+    assert added is project
+    assert session.committed is True
+    assert session.refreshed == [project]
+
+
+def test_delete_project_ok_true_commits_when_service_says_found(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.services import projects
+
+    monkeypatch.setattr(projects, "delete_project", lambda _session, _ident: True)
+    session = FakeSession()
+
+    data = run_gql(
+        schema,
+        "mutation($id: UUID!) { deleteProject(id: $id) { ok } }",
+        context={"session": session},
+        variables={"id": str(uuid.uuid4())},
+    )
+    assert data["deleteProject"] == {"ok": True}
+    assert session.committed is True
+
+
+def test_delete_project_ok_false_skips_commit_when_service_says_missing(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.services import projects
+
+    monkeypatch.setattr(projects, "delete_project", lambda _session, _ident: False)
+    session = FakeSession()
+
+    data = run_gql(
+        schema,
+        "mutation($id: UUID!) { deleteProject(id: $id) { ok } }",
+        context={"session": session},
+        variables={"id": str(uuid.uuid4())},
+    )
+    assert data["deleteProject"] == {"ok": False}
+    assert session.committed is False

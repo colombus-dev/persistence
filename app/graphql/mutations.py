@@ -14,9 +14,8 @@ import strawberry
 from sqlmodel import Session
 from strawberry.scalars import JSON as StrawberryJSON
 
-import app.db.models as models
 from app.graphql.types import PatternType, ProfileType, ProjectType
-from app.services import patterns, profiles
+from app.services import patterns, profiles, projects
 
 
 @strawberry.type
@@ -33,7 +32,7 @@ class Mutation:
     @strawberry.mutation
     def create_project(self, info: strawberry.Info, name: str) -> ProjectType:
         session: Session = info.context["session"]
-        project = models.Project(name=name)
+        project = projects.create_project(name=name)
         session.add(project)
         session.commit()
         session.refresh(project)
@@ -42,10 +41,8 @@ class Mutation:
     @strawberry.mutation
     def delete_project(self, info: strawberry.Info, id: uuid.UUID) -> MutationResult:
         session: Session = info.context["session"]
-        project = session.get(models.Project, id)
-        if project is None:
+        if not projects.delete_project(session, id):
             return MutationResult(ok=False)
-        session.delete(project)
         session.commit()
         return MutationResult(ok=True)
 
