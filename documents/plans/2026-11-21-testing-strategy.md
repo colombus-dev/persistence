@@ -131,6 +131,12 @@ commits skip it).
 - Added *last* so the tier/mock stages count their new DB-free tests before the
   gate is enforced.
 
+**Shipped.** Layer A `fail_under = 80` in `pyproject.toml`; Layer B as a
+`local-coverage-gate` hook (`scripts/coverage-gate.sh`) on the staged `app/*.py`
+diff, one full-suite run per relevant commit, early exit when no `app/*.py` is
+staged. Verified in both directions: an untested `app` file fails the gate (0%
+< 80); a covered one passes.
+
 ## Deferred as future options (recorded, not shipped)
 
 These are deliberately out of scope this phase. Both are only worthwhile once the

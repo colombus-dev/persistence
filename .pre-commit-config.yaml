@@ -58,3 +58,10 @@ repos:
         require_serial: true
         language: unsupported
         pass_filenames: false
+
+      - id: local-coverage-gate
+        name: coverage contribution gate
+        entry: uv run bash scripts/coverage-gate.sh
+        require_serial: true
+        language: unsupported
+        pass_filenames: false
