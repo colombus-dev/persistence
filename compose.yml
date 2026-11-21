@@ -11,7 +11,7 @@ services:
       DATABASE_URL: ${DATABASE_URL}
       DATABASE_URL_LOCALHOST: ${DATABASE_URL_LOCALHOST}
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8087/api/v1/utils/health-check/"]
+      test: ["CMD", "curl", "-f", "http://localhost:8187/health"]
       interval: 10s
       timeout: 5s
       retries: 5
