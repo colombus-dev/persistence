@@ -144,11 +144,6 @@ class Query:
             )
         )
 
-    @strawberry.field
-    def one_plus_one(self) -> int:
-        """A trivial scalar field proving the query endpoint responds."""
-        return 2
-
 
 @strawberry.type
 class MutationResult:

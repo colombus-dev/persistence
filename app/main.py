@@ -16,6 +16,17 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json",
 )
 
+
+@app.get("/health")
+def health() -> dict[str, str]:
+    """Liveness probe for the persistence service.
+
+    The demo REST endpoints were removed (slice 7), so the compose healthcheck
+    targets this lightweight endpoint rather than a GraphQL field.
+    """
+    return {"status": "ok"}
+
+
 graphql_app: GraphQLRouter = GraphQLRouter(  # type: ignore[type-var]
     schema=schema, context_getter=get_graphql_context
 )
