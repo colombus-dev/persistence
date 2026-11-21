@@ -65,6 +65,8 @@ $ uv run alembic upgrade head
 
 - Models and schema authority: `app/db/models.py` and `app/alembic/`.
 - Engine/session setup: `app/db/session.py`.
-- GraphQL schema (queries, mutations, context wiring): `app/graphql.py`.
+- GraphQL schema (queries, mutations, context wiring): `app/graphql/`
+  (`types.py`, `queries.py`, `mutations.py`, `context.py`, `schema.py`).
+- Domain creation/defaulting rules: `app/services/`.
 - FastAPI entrypoint and routing: `app/main.py`.
 - Settings (`.env` at the repo root): `app/core/config.py`.

@@ -9,8 +9,7 @@ colombus defines so the schema is a faithful migration target.
 import uuid
 from typing import Any, Optional
 
-from sqlalchemy import Index
-from sqlalchemy.dialects import mysql
+from sqlalchemy import Index, Text
 from sqlalchemy.orm import relationship
 from sqlmodel import (
     JSON,
@@ -18,15 +17,12 @@ from sqlmodel import (
     Field,
     Relationship,
     SQLModel,
-    String,
 )
 
 ProjectIdFk: Any = Field(default=None, foreign_key="project.id", ondelete="CASCADE")
 ProfileIdFk: Any = Field(
     default=None, foreign_key="profile.id", ondelete="CASCADE", index=True
 )
-LongString: Any = String().with_variant(mysql.LONGTEXT(), "mysql", "mariadb")
-
 
 # "app management"-related tables
 
@@ -140,7 +136,7 @@ class MetaInstruction(MetaInstructionBase, table=True):
 
 
 class CodeBase(SQLModel):
-    content: str = Field(sa_column=Column(LongString))
+    content: str = Field(sa_column=Column(Text))
     position: int
 
 
