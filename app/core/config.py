@@ -5,10 +5,10 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    # TODO
     model_config = SettingsConfigDict(
-        # Use top level .env file (at the repository's root)
-        env_file="/home/nico/git/these/colombus-dev/persistence/.env",
+        # Use the repo-root .env, resolved relative to the working directory
+        # (the project is always run from the repo root).
+        env_file=".env",
         env_ignore_empty=True,
         env_file_encoding="utf-8",
         extra="ignore",
