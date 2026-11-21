@@ -59,19 +59,22 @@ tests/
 
 ### Stage 2 — Mock seams for FastAPI + Strawberry (`tests/unit/`)
 
-Three seams, each proving a distinct contract; all in the unit tier (no DB):
+Two shipped seams, each proving a distinct contract, all in the unit tier (no DB):
 
 - **Session seam** — mock `info.context["session"]`: resolver reads context
   correctly, mutation write contract (add/commit/refresh), query output shape.
 - **Service seam** — patch `app.services.*` where the resolver imported it:
   resolver→service delegation and the `ok: bool` / skip-commit envelope.
-- **Router context seam** (FastAPI) — `monkeypatch.setattr(graphql_app,
-  "context_getter", lambda: {...})` runs the full HTTP request path DB-free
-  (`GraphQLRouter` accepts a dict-returning context_getter; the router captured
-  the function at construction, so `dependency_overrides` can't reach it).
 - Prefer returning **real in-memory `models.*` rows**, not bare `Mocks`, so the
   mapper's attribute reads don't produce Mock-chains that explode in nested
   resolution.
+
+A router `context_getter` seam was prototyped and **dropped**: the shipped
+`app.main` router resolves `Depends(context_getter)` at construction (so
+monkeypatching its attribute can't rewire it), an ephemeral router diverges from
+production wiring, and the integration API suite already covers the true HTTP
+path against the DB. Testing the seam would re-verify upstream Strawberry/FastAPI
+behavior — not our resolver logic.
 
 ### Stage 3 — Parameterized tests (ship now)
 
