@@ -78,11 +78,16 @@ behavior — not our resolver logic.
 
 ### Stage 3 — Parameterized tests (ship now)
 
-`pytest.mark.parametrize` on enumerable input→expected pairs in the unit tier:
+`pytest.mark.parametrize` on enumerable input→expected pairs, scoped to the
+**critical pure business logic** (the unit-tier defaulting builders):
 
-- Defaulting truth tables for `create_profile`/`create_pattern` (`json_profile`
-  absent/`{}`/`None`/provided, `score`/`dsl_content` edges).
-- The delete-returns-`False` contract across the three delete ops.
+- Defaulting truth tables for `create_profile`/`create_pattern` — each
+  `or`-fallback rule and its falsy edge: `json_profile` absent/`None`/`{}`/
+  provided, `json_pattern` absent/`{}`/provided, `dsl_content` absent/`""`/
+  provided.
+- Deliberately **not** covered here: delete-returns-`False` (the `delete_*`
+  services are session-bound → integration tier; the seam tests already pin the
+  resolver's `ok`/skip-commit envelope).
 - **Do not parameterize the mutation/DB suites**: per-resource setup is the
   value; flattening it loses isolation and hurts failure reproduction.
 
