@@ -21,7 +21,7 @@ from sqlmodel import SQLModel, Session, create_engine, inspect, select
 
 from app.db.models import Profile, Project
 from tests.profile_types import ProfileJson
-from tests.profile_utils import ingest_profile
+from tests.profile_utils import encode_profile, ingest_profile
 
 MIGRATION_DB_URL = (
     "postgresql+psycopg://postgres:colombus_persistence_password"
@@ -132,7 +132,13 @@ def test_baseline_migration_column_parity() -> None:
 def test_baseline_profile_roundtrips_through_migrated_db(
     full_profile: ProfileJson,
 ) -> None:
-    """A profile written to the migrated schema reloads identically."""
+    """A profile written to the migrated schema reloads identically.
+
+    Complements the column-parity test: it can't type-check because SQLModel's
+    ``AutoString``/``Uuid`` render as Postgres ``VARCHAR``/``UUID`` in the
+    inspector, so a round-trip against the migrated DB is the real guard that
+    the migrated columns store and reload values correctly.
+    """
     config = _alembic_config()
     _upgrade(config)
 
@@ -150,5 +156,6 @@ def test_baseline_profile_roundtrips_through_migrated_db(
             ).one()
             assert profile.name == full_profile["name"]
             assert profile.json_profile == full_profile
+            assert profile.encoded_profile == encode_profile(full_profile)
     finally:
         engine.dispose()

@@ -14,6 +14,7 @@ from sqlmodel import Session, select
 import app.db.models as M
 from app.graphql import build_schema_context, finalize_schema
 from tests.profile_types import ProfileJson
+from tests.profile_utils import encode_profile
 
 
 def _mutation(session: Session, query: str, variables: dict[str, Any]) -> dict:
@@ -70,8 +71,7 @@ def test_create_profile(session: Session, full_profile: ProfileJson) -> None:
     session.add(project)
     session.flush()
 
-    source = full_profile["source"]
-    encoded = "-".join(step["name"] for step in source)
+    encoded = encode_profile(full_profile)
     json_profile = {"name": "made-profile", "source": []}
     data = _mutation(
         session,

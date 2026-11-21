@@ -14,6 +14,11 @@ from app.db.models import CellOutput, Code, MetaInstruction, Profile, Step
 from tests.profile_types import ProfileJson
 
 
+def encode_profile(profile_json: ProfileJson) -> str:
+    """Derive the stored ``encoded_profile`` string from a profile document."""
+    return "-".join(step["name"] for step in profile_json["source"])
+
+
 def ingest_profile(
     session: Session, project_id: uuid.UUID, profile_json: ProfileJson
 ) -> Profile:
@@ -70,7 +75,7 @@ def ingest_profile(
         score=profile_json.get("score") or 0.0,
         name=profile_json["name"],
         steps=all_steps,
-        encoded_profile="-".join(step["name"] for step in profile_json["source"]),
+        encoded_profile=encode_profile(profile_json),
         meta_instructions=all_profile_mi,
         codes=all_profile_codes,
         json_profile=profile_json,
