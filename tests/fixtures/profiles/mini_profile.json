@@ -1,0 +1,137 @@
+{
+  "name": "mini_profile",
+  "metadata": {
+    "version": "0.3.0-MLProfile",
+    "generation_date": "2026-11-20T00:00:00.000000",
+    "taxonomy": "headergen",
+    "profiler": "llm"
+  },
+  "source": [
+    {
+      "name": "Library Loading",
+      "tasks": [
+        {
+          "id": "mi-a",
+          "algoFamily": "family",
+          "algoName": "algo a",
+          "library": "lib",
+          "function": "fun",
+          "tasks": [
+            {
+              "name": "code a-0",
+              "tasks": []
+            },
+            {
+              "name": "code a-1",
+              "tasks": []
+            }
+          ],
+          "metadata": {
+            "perplexity": 1
+          }
+        },
+        {
+          "id": "mi-b",
+          "algoFamily": "family",
+          "algoName": "algo b",
+          "library": "lib",
+          "function": "fun",
+          "tasks": [
+            {
+              "name": "code b-0",
+              "tasks": []
+            },
+            {
+              "name": "code b-1",
+              "tasks": []
+            }
+          ],
+          "metadata": {
+            "perplexity": 1
+          }
+        }
+      ],
+      "outputs_ids": []
+    },
+    {
+      "name": "Data Preparation",
+      "tasks": [
+        {
+          "id": "mi-c",
+          "algoFamily": "family",
+          "algoName": "algo c",
+          "library": "lib",
+          "function": "fun",
+          "tasks": [
+            {
+              "name": "code c-0",
+              "tasks": []
+            },
+            {
+              "name": "code c-1",
+              "tasks": []
+            }
+          ],
+          "metadata": {
+            "perplexity": 1
+          }
+        }
+      ],
+      "outputs_ids": [
+        "out-a",
+        "out-b"
+      ]
+    },
+    {
+      "name": "Data Modeling",
+      "tasks": [
+        {
+          "id": "mi-d",
+          "algoFamily": "family",
+          "algoName": "algo d",
+          "library": "lib",
+          "function": "fun",
+          "tasks": [
+            {
+              "name": "code d-0",
+              "tasks": []
+            },
+            {
+              "name": "code d-1",
+              "tasks": []
+            }
+          ],
+          "metadata": {
+            "perplexity": 1
+          }
+        },
+        {
+          "id": "mi-e",
+          "algoFamily": "family",
+          "algoName": "algo e",
+          "library": "lib",
+          "function": "fun",
+          "tasks": [
+            {
+              "name": "code e-0",
+              "tasks": []
+            },
+            {
+              "name": "code e-1",
+              "tasks": []
+            }
+          ],
+          "metadata": {
+            "perplexity": 1
+          }
+        }
+      ],
+      "outputs_ids": []
+    }
+  ],
+  "outputs": {
+    "out-a": "image-a.png",
+    "out-b": "image-b.png"
+  },
+  "score": 0.85
+}
